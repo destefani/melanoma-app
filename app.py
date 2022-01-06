@@ -5,6 +5,8 @@ from torchvision import transforms
 import streamlit as st
 from PIL import Image
 
+# To-do: implement onnx model
+
 
 def transform_image(image_bytes):
     transform = transforms.Compose([
@@ -20,8 +22,8 @@ def transform_image(image_bytes):
     return transform(image).unsqueeze(0)
 
 # Load model
-model = torch.load('models/0020.pt')
-model.eval().to('cpu')
+model = torch.load('models/0020.pt', map_location='cpu')
+model.eval()
 
 st.title('Melanoma Detection')
 
