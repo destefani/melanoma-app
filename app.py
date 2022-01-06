@@ -32,6 +32,6 @@ if uploaded_file is not None:
     prediction = model(input_image)
     probability = torch.sigmoid(prediction).item()
 
-    st.write('Malignancy Probability:')
+    st.write('Malignancy probability:')
     st.write(f'{int(probability * 100)}%')
     st.image(bytes_data)
