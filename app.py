@@ -21,6 +21,8 @@ def transform_image(image_bytes):
     image = Image.open(io.BytesIO(image_bytes))
     return transform(image).unsqueeze(0)
 
+
+
 # Load model
 model = torch.load('models/0020.pt', map_location='cpu')
 model.eval()
@@ -37,3 +39,4 @@ if uploaded_file is not None:
     st.write('Malignancy probability:')
     st.write(f'{int(probability * 100)}%')
     st.image(bytes_data)
+
