@@ -5,6 +5,6 @@ install:
 	. venv/bin/activate 
 	pip install -r requirements.txt
 	
+
 run:
-	. venv/bin/activate
-	python3 -m streamlit run app.py
+	. uvicorn main:app --reload
