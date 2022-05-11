@@ -6,4 +6,4 @@ install:
 	pip install -r requirements.txt
 	
 run:
-	. uvicorn main:app --reload
+	python3 main.py
